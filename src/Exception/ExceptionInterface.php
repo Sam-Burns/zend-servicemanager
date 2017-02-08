@@ -7,11 +7,12 @@
 
 namespace Zend\ServiceManager\Exception;
 
-use Interop\Container\Exception\ContainerException;
+use Interop\Container\Exception\ContainerException as ContainerInteropException;
+use Psr\Container\ContainerExceptionInterface as Psr11ContainerInterface;
 
 /**
  * Base exception for all Zend\ServiceManager exceptions.
  */
-interface ExceptionInterface extends ContainerException
+interface ExceptionInterface extends ContainerInteropException, Psr11ContainerInterface
 {
 }

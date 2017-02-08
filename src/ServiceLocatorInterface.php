@@ -7,13 +7,14 @@
 
 namespace Zend\ServiceManager;
 
-use Interop\Container\ContainerInterface;
+use Interop\Container\ContainerInterface as ContainerInteropContainer;
 use Interop\Container\Exception\ContainerException;
+use Psr\Container\ContainerInterface as Psr11Container;
 
 /**
  * Interface for service locator
  */
-interface ServiceLocatorInterface extends ContainerInterface
+interface ServiceLocatorInterface extends ContainerInteropContainer, Psr11Container
 {
     /**
      * Build a service by its name, using optional options (such services are NEVER cached).
